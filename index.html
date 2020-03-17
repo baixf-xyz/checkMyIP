@@ -1,33 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1504.83">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 12.0px 'PingFang SC'; color: #000000; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-<p class="p1"><span class="s1">额。。。可海星？</span></p>
-<p class="p2"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1">好吧，看在你这么执着，告诉你终点是一个网站，而且是：xxxxxxxx.ichr.me 的形式。</span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1">至于所有的数字线索都只会以 2，8，10，16 进制给出，且仅仅使用ascll编码，不会有中文。</span></p>
-<p class="p2"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1">所有必要信息都是刻意给出的，没有附加信息也可以走到终点，只不过可能会曲折一点点（一点点？）。</span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1">生日快乐哦！祝你玩的开心！</span></p>
-<p class="p1"><span class="s1"><br>
-</span></p>
-<p class="p1"><span class="s1">别问，问就把书好好读几遍！</span></p>
+    <div id="own-test">
+        <h2>检查你的 IP 地址</h2>
+        <div id="cr-ipsb-container">
+            <h3 id="cr-ipsb-name">从 IP.SB 获取：</h3>
+            <div id="cr-ipsb"></div>
+            <dib id="cr-ipsb-geo"></dib>
+        </div>
+        <div id="cr-sohu-container">
+            <h3 id="cr-sohu-name">从 SOHU 获取：</h3>
+            <div id="cr-sohu"></div>
+            <div id="cr-sohu-geo"></div>
+        </div>
+    </div>
+    <br>
+    <div id="init-title">
+        <h2>检查你的连接情况</h2>
+    </div>
+    <div id="init-checker">
+        <div id="baidu-checker">
+            <div id="baidu-name">
+                <h3>百度</h3>
+            </div>
+            <div id="http-baidu"></div>
+            <div id="baidu-desc">
+                <p>国内网站</p>
+            </div>
+        </div>
+        <div id="163-checker">
+            <div id="163-name">
+                <h3>网易云音乐</h3>
+            </div>
+            <div id="http-163"></div>
+            <div id="163-desc">
+                <p>国内网站</p>
+            </div>
+        </div>
+        <div id="github-checker">
+            <div id="github-name">
+                <h3>GitHub</h3>
+            </div>
+            <div id="http-github"></div>
+            <div id="github-desc">
+                <p>国外网站</p>
+            </div>
+        </div>
+        <div id="youtube-checker">
+            <div id="youtube-name">
+                <h3>YouTube</h3>
+            </div>
+            <div id="http-youtube"></div>
+            <div id="youtube-desc">
+                <p>国外网站</p>
+            </div>
+        </div>
+    </div>
+    <script async src="./main.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script>
+        document.getElementById('cr-sohu').innerHTML = returnCitySN['cip'];
+        document.getElementById('cr-sohu-geo').innerHTML = returnCitySN['cname'];
+    </script>
+    <script async type="application/javascript" src="https://api.ip.sb/geoip?callback=getgeoip"></script>
+    
 </body>
 </html>
