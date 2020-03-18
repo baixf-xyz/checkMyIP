@@ -4,68 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check Your IP | ChrBeta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <div id="own-test">
-        <h2>检查你的 IP 地址</h2>
-        <div id="cr-ipsb-container">
-            <h3 id="cr-ipsb-name">从 IP.SB 获取：</h3>
-            <div id="cr-ipsb"></div>
-            <dib id="cr-ipsb-geo"></dib>
-        </div>
-        <div id="cr-sohu-container">
-            <h3 id="cr-sohu-name">从 SOHU 获取：</h3>
-            <div id="cr-sohu"></div>
-            <div id="cr-sohu-geo"></div>
-        </div>
-    </div>
-    <br>
-    <div id="init-title">
-        <h2>检查你的连接情况</h2>
-    </div>
-    <div id="init-checker">
-        <div id="baidu-checker">
-            <div id="baidu-name">
-                <h3>百度</h3>
+    <div class="container">
+        <section class="section">
+            <h2 class="ci-center-md title">检查你的 IP 地址</h2>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <div class="box" id="ipsb-container">
+                        <h3 class="ci-center-md subtitle" id="ipsb-name">从国外获取（IP.SB）：</h3>
+                        <hr class="ci-seperate-line">
+                        <div class="ci-center-md">
+                            <div id="ip-ipsb"></div>
+                            <div class="ci-tx-sm" id="ip-ipsb-geo"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box" id="sohu-container">
+                        <h3 class="ci-center-md subtitle" id="sohu-name">从国内获取（搜狐）：</h3>
+                        <hr class="ci-seperate-line">
+                        <div class="ci-center-md">
+                            <div id="ip-sohu"></div>
+                            <div class="ci-tx-sm" id="ip-sohu-geo"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="http-baidu"></div>
-            <div id="baidu-desc">
-                <p>国内网站</p>
+            <br><br>
+            <h2 class="ci-center-md title">检查你的连接情况</h2>
+            <br>
+            <div class="columns" id="init-checker">
+                <div class="column" id="baidu-checker">
+                    <div class="box" id="baidu-name">
+                        <h3 class="ci-center-md subtitle">百度（国内）</h3>
+                        <hr class="ci-seperate-line">
+                        <div class="ci-center-md">
+                            <div id="http-baidu"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column" id="163-checker">
+                    <div class="box" id="163-name">
+                        <h3 class="ci-center-md subtitle">网易云音乐（国内）</h3>
+                        <hr class="ci-seperate-line">
+                        <div class="ci-center-md">
+                            <div id="http-163"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column" id="github-checker">
+                    <div class="box" id="github-name">
+                        <h3 class="ci-center-md subtitle">GitHub（国外）</h3>
+                        <hr class="ci-seperate-line">
+                        <div class="ci-center-md">
+                            <div id="http-github"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column" id="youtube-checker">
+                    <div class="box" id="youtube-name">
+                        <h3 class="ci-center-md subtitle">YouTube（国外）</h3>
+                        <hr class="ci-seperate-line">
+                        <div class="ci-center-md">
+                            <div id="http-youtube"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="163-checker">
-            <div id="163-name">
-                <h3>网易云音乐</h3>
-            </div>
-            <div id="http-163"></div>
-            <div id="163-desc">
-                <p>国内网站</p>
-            </div>
-        </div>
-        <div id="github-checker">
-            <div id="github-name">
-                <h3>GitHub</h3>
-            </div>
-            <div id="http-github"></div>
-            <div id="github-desc">
-                <p>国外网站</p>
-            </div>
-        </div>
-        <div id="youtube-checker">
-            <div id="youtube-name">
-                <h3>YouTube</h3>
-            </div>
-            <div id="http-youtube"></div>
-            <div id="youtube-desc">
-                <p>国外网站</p>
-            </div>
-        </div>
+        </section>
     </div>
     <script async src="./main.js"></script>
     <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script>
-        document.getElementById('cr-sohu').innerHTML = returnCitySN['cip'];
-        document.getElementById('cr-sohu-geo').innerHTML = returnCitySN['cname'];
+        document.getElementById('ip-sohu').innerHTML = returnCitySN['cip'];
+        document.getElementById('ip-sohu-geo').innerHTML = returnCitySN['cname'];
     </script>
     <script async type="application/javascript" src="https://api.ip.sb/geoip?callback=getgeoip"></script>
     

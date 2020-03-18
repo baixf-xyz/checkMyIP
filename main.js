@@ -1,7 +1,7 @@
 function getgeoip(json) {
     var 
-        cr_ipsb = document.getElementById('cr-ipsb'),
-        cr_ipsb_geo = document.getElementById('cr-ipsb-geo'),
+        cr_ipsb = document.getElementById('ip-ipsb'),
+        cr_ipsb_geo = document.getElementById('ip-ipsb-geo'),
         n = (ve) => Boolean(ve) ? ve + " " : " ";
     
     cr_ipsb.innerHTML = json.ip; 
